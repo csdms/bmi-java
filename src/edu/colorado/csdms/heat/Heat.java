@@ -18,7 +18,7 @@ public class Heat {
   private Double alpha;
   private Double time;
   private Double timeStep;
-  private List<Double> temperature;
+  private double[][] temperature;
 
   /**
    * Create a new Heat model.
@@ -38,12 +38,16 @@ public class Heat {
     spacing = new ArrayList<Double>(Arrays.asList(dx, dy));
     origin = new ArrayList<Double>(Arrays.asList(xStart, yStart));
     this.alpha = alpha;
-    this.time = 0.0;
+    time = 0.0;
 
-    Double minSpacing = Math.min(this.spacing.get(0), this.spacing.get(1));
-    this.timeStep = Math.pow(minSpacing, 2.0) / (4.0 * this.alpha);
+    Double minSpacing = Math.min(spacing.get(0), spacing.get(1));
+    timeStep = Math.pow(minSpacing, 2.0) / (4.0 * this.alpha);
 
-    // Double ran = Math.random();
+    // Initialize temperature of plate. The top row is hot.
+    temperature = new double[shape.get(0)][shape.get(1)];
+    for (int i = 0; i < shape.get(1); i++) {
+      temperature[0][i] = 20.0;
+    }
   }
 
   /**
@@ -110,11 +114,11 @@ public class Heat {
     this.timeStep = timeStep;
   }
 
-  public List<Double> getTemperature() {
+  public double[][] getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(List<Double> temperature) {
+  public void setTemperature(double[][] temperature) {
     this.temperature = temperature;
   }
 
