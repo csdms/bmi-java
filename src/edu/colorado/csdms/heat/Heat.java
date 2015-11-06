@@ -3,6 +3,8 @@
  */
 package edu.colorado.csdms.heat;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,7 +19,6 @@ public class Heat {
   private Double time;
   private Double timeStep;
   private List<Double> temperature;
-  private List<Double> nextTemperature;
 
   /**
    * Create a new Heat model.
@@ -33,12 +34,9 @@ public class Heat {
   public Heat(Integer nRows, Integer nCols, Double dx, Double dy,
       Double xStart, Double yStart, Double alpha) {
 
-    this.shape.add(0, nRows);
-    this.shape.add(1, nCols);
-    this.spacing.add(0, dx);
-    this.spacing.add(1, dy);
-    this.origin.add(0, xStart);
-    this.origin.add(1, yStart);
+    shape = new ArrayList<Integer>(Arrays.asList(nRows, nCols));
+    spacing = new ArrayList<Double>(Arrays.asList(dx, dy));
+    origin = new ArrayList<Double>(Arrays.asList(xStart, yStart));
     this.alpha = alpha;
     this.time = 0.0;
 
@@ -111,14 +109,6 @@ public class Heat {
 
   public void setTemperature(List<Double> temperature) {
     this.temperature = temperature;
-  }
-
-  public List<Double> getNextTemperature() {
-    return nextTemperature;
-  }
-
-  public void setNextTemperature(List<Double> nextTemperature) {
-    this.nextTemperature = nextTemperature;
   }
 
   /**
