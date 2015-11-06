@@ -47,6 +47,13 @@ public class Heat {
   }
 
   /**
+   * Create a Heat model using default parameter values.
+   */
+  public Heat() {
+    this(10, 20, 1.0, 1.0, 0.0, 0.0, 1.0);
+  }
+
+  /**
    * Create a Heat model from settings in a file.
    * 
    * @param fileName a YAML file with Heat model settings
