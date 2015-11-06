@@ -123,17 +123,47 @@ public class Heat {
   }
 
   /**
+   * Clones a 2D double array.
+   *
+   * @param array a 2d array of type double
+   * @return a clone of the input array
+   * @see http://stackoverflow.com/a/1686523/1563298
+   */
+  private double[][] cloneArray2D(double[][] array) {
+    double [][] clone = new double[array.length][];
+    for (int i = 0; i < array.length; i++) {
+      clone[i] = array[i].clone();
+    }
+    return clone;
+  }
+
+  /**
    * Calculate new temperatures for the next time step.
    */
   public void advanceInTime() {
-    ;
+    double[][] copy = cloneArray2D(temperature);
+    temperature = Solve2D.solve(copy, shape, spacing, alpha, timeStep);
+    time += timeStep;
   }
 
   /**
    * @param args
    */
   public static void main(String[] args) {
-    ;
+    System.out.println("Example of using Heat class");
+    Heat heat = new Heat();
+    System.out.println("shape: " + heat.getShape().toString());
+    System.out.println("spacing: " + heat.getSpacing().toString());
+    System.out.println("origin: " + heat.getOrigin().toString());
+
+    Double currentTime = heat.getTime();
+    while (currentTime < 1.0) {
+      System.out.println("time = " + currentTime.toString());
+      double[][] temp = heat.getTemperature();
+      System.out.println("temperature: " + Arrays.deepToString(temp));
+      heat.advanceInTime();
+      currentTime = heat.getTime();
+    }
   }
 
 }
