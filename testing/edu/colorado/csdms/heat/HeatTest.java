@@ -11,15 +11,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * JUnit test for the Heat class.
+ * JUnit tests for the Heat class.
  */
 public class HeatTest {
 
   private List<Integer> shape;
+  private List<Double> spacing;
+  private List<Double> origin;
   private Double alpha;
   private Double time;
   private Double timeStep;
-  private Heat testHeat;
+  private double[][] temperature;
+  private Heat heat;
   
   /**
    * @throws java.lang.Exception
@@ -33,10 +36,20 @@ public class HeatTest {
     Double xStart = 0.0;
     Double yStart = 0.0;
     alpha = 1.0;
-    testHeat = new Heat(nRows, nCols, dx, dy, xStart, yStart, alpha);
+
+    heat = new Heat(nRows, nCols, dx, dy, xStart, yStart, alpha);
+
     time = 0.0;
     timeStep = 0.25;
     shape = new ArrayList<Integer>(Arrays.asList(nRows, nCols));
+    spacing = new ArrayList<Double>(Arrays.asList(dx, dy));
+    origin = new ArrayList<Double>(Arrays.asList(xStart, yStart));
+
+    temperature = new double[shape.get(0)][shape.get(1)];
+    for (int i = 0; i < shape.get(1); i++) {
+      temperature[0][i] = 20.0;
+    }
+
   }
 
   /**
@@ -51,7 +64,15 @@ public class HeatTest {
    */
   @Test
   public final void testHeatIntegerIntegerDoubleDoubleDoubleDoubleDouble() {
-    fail("Not yet implemented"); // TODO
+    Integer nRows = 10;
+    Integer nCols = 20;
+    Double dx = 1.0;
+    Double dy = 1.0;
+    Double xStart = 0.0;
+    Double yStart = 0.0;
+    alpha = 1.0;
+    Heat newHeat = new Heat(nRows, nCols, dx, dy, xStart, yStart, alpha);
+    assertNotNull(newHeat);
   }
 
   /**
@@ -59,7 +80,8 @@ public class HeatTest {
    */
   @Test
   public final void testHeat() {
-    fail("Not yet implemented"); // TODO
+    Heat newHeat = new Heat();
+    assertNotNull(newHeat);
   }
 
   /**
@@ -75,7 +97,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetShape() {
-    assertEquals(shape, testHeat.getShape());
+    assertEquals(shape, heat.getShape());
   }
 
   /**
@@ -86,8 +108,8 @@ public class HeatTest {
     List<Integer> newShape = new ArrayList<Integer>();
     newShape.add(100);
     newShape.add(50);
-    testHeat.setShape(newShape);
-    assertEquals(newShape, testHeat.getShape());
+    heat.setShape(newShape);
+    assertEquals(newShape, heat.getShape());
   }
 
   /**
@@ -95,7 +117,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetSpacing() {
-    fail("Not yet implemented"); // TODO
+    assertEquals(spacing, heat.getSpacing());
   }
 
   /**
@@ -103,7 +125,11 @@ public class HeatTest {
    */
   @Test
   public final void testSetSpacing() {
-    fail("Not yet implemented"); // TODO
+    List<Double> newSpacing = new ArrayList<Double>();
+    newSpacing.add(500.0);
+    newSpacing.add(250.0);
+    heat.setSpacing(newSpacing);
+    assertEquals(newSpacing, heat.getSpacing());
   }
 
   /**
@@ -111,7 +137,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetOrigin() {
-    fail("Not yet implemented"); // TODO
+    assertEquals(origin, heat.getOrigin());
   }
 
   /**
@@ -119,7 +145,11 @@ public class HeatTest {
    */
   @Test
   public final void testSetOrigin() {
-    fail("Not yet implemented"); // TODO
+    List<Double> newOrigin = new ArrayList<Double>();
+    newOrigin.add(10.0);
+    newOrigin.add(15.0);
+    heat.setOrigin(newOrigin);
+    assertEquals(newOrigin, heat.getOrigin());
   }
 
   /**
@@ -127,7 +157,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetAlpha() {
-    assertEquals(alpha, testHeat.getAlpha());
+    assertEquals(alpha, heat.getAlpha());
   }
 
   /**
@@ -136,8 +166,8 @@ public class HeatTest {
   @Test
   public final void testSetAlpha() {
     Double newAlpha = 0.2;
-    testHeat.setAlpha(newAlpha);
-    assertEquals(newAlpha, testHeat.getAlpha());
+    heat.setAlpha(newAlpha);
+    assertEquals(newAlpha, heat.getAlpha());
   }
 
   /**
@@ -145,7 +175,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetTime() {
-    assertEquals(time, testHeat.getTime());
+    assertEquals(time, heat.getTime());
   }
 
   /**
@@ -154,8 +184,8 @@ public class HeatTest {
   @Test
   public final void testSetTime() {
     Double newTime = 42.0;
-    testHeat.setTime(newTime);
-    assertEquals(newTime, testHeat.getTime());
+    heat.setTime(newTime);
+    assertEquals(newTime, heat.getTime());
   }
 
   /**
@@ -163,7 +193,7 @@ public class HeatTest {
    */
   @Test
   public final void testGetTimeStep() {
-    assertTrue(testHeat.getTimeStep() > 0.0);
+    assertTrue(heat.getTimeStep() > 0.0);
   }
 
   /**
@@ -172,8 +202,8 @@ public class HeatTest {
   @Test
   public final void testSetTimeStep() {
     Double newTimeStep = 5.0;
-    testHeat.setTimeStep(newTimeStep);
-    assertEquals(newTimeStep, testHeat.getTimeStep());
+    heat.setTimeStep(newTimeStep);
+    assertEquals(newTimeStep, heat.getTimeStep());
   }
 
   /**
