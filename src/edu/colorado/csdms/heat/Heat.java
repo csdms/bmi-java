@@ -44,9 +44,9 @@ public class Heat {
     timeStep = Math.pow(minSpacing, 2.0) / (4.0 * this.alpha);
 
     // Initialize temperature of plate. The top row is hot.
-    temperature = new double[shape.get(0)][shape.get(1)];
+    temperature = new double[shape.get(1)][shape.get(0)];
     for (int i = 0; i < shape.get(1); i++) {
-      temperature[0][i] = 20.0;
+      temperature[i][0] = 20.0;
     }
   }
 
@@ -156,11 +156,27 @@ public class Heat {
     System.out.println("spacing: " + heat.getSpacing().toString());
     System.out.println("origin: " + heat.getOrigin().toString());
 
+    double[][] temp = heat.getTemperature();
+
+    // Print first column.
+    double[] col0 = temp[0];
+    System.out.println("Col0 = ");
+    System.out.println(Arrays.toString(col0));
+
+    // Print first row.
+    double[] row0 = new double[heat.getShape().get(1)];
+    for (int i = 0; i < row0.length; i++) {
+      row0[i] = temp[i][0];
+    }
+    System.out.println("Row0 = ");
+    System.out.println(Arrays.toString(row0));
+
+    // Advance over several time steps.
     Double currentTime = heat.getTime();
     while (currentTime < 1.0) {
       System.out.println("time = " + currentTime.toString());
-      double[][] temp = heat.getTemperature();
-      System.out.println("temperature: " + Arrays.deepToString(temp));
+      System.out.println("temperature: "
+          + Arrays.deepToString(heat.getTemperature()));
       heat.advanceInTime();
       currentTime = heat.getTime();
     }

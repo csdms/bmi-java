@@ -45,11 +45,11 @@ public class HeatTest {
     spacing = new ArrayList<Double>(Arrays.asList(dx, dy));
     origin = new ArrayList<Double>(Arrays.asList(xStart, yStart));
 
-    temperature = new double[shape.get(0)][shape.get(1)];
+    // Initialize temperature of plate. The top row is hot.
+    temperature = new double[shape.get(1)][shape.get(0)];
     for (int i = 0; i < shape.get(1); i++) {
-      temperature[0][i] = 20.0;
+      temperature[i][0] = 20.0;
     }
-
   }
 
   /**
