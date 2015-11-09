@@ -211,7 +211,11 @@ public class HeatTest {
    */
   @Test
   public final void testGetTemperature() {
-    fail("Not yet implemented"); // TODO
+
+    // Check that the first column matches.
+    double expected[] = temperature[0];
+    double actual[] = heat.getTemperature()[0];
+    assertArrayEquals(expected, actual, 0);
   }
 
   /**
@@ -219,7 +223,19 @@ public class HeatTest {
    */
   @Test
   public final void testSetTemperature() {
-    fail("Not yet implemented"); // TODO
+    double[][] newTemperature = new double[shape.get(1)][shape.get(0)];
+    for (int i = 0; i < shape.get(1); i++) {
+      double[] iCol = newTemperature[i];
+      for (int j = 0; j < iCol.length; j++) {
+        iCol[j] = j + 1;
+      }
+    }
+    heat.setTemperature(newTemperature);
+
+    // Check that the first column matches.
+    double expected[] = newTemperature[0];
+    double actual[] = heat.getTemperature()[0];
+    assertArrayEquals(expected, actual, 0);
   }
 
   /**
