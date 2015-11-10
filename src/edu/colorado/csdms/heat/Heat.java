@@ -5,6 +5,7 @@ package edu.colorado.csdms.heat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -60,10 +61,26 @@ public class Heat {
   /**
    * Create a Heat model from settings in a file.
    * 
-   * @param fileName a YAML file with Heat model settings
+   * @param fileName an XML file with Heat model settings
    */
   public Heat(String fileName) {
-    ;
+    this(config(fileName).get("nRows").intValue(),
+        config(fileName).get("nCols").intValue(),
+        config(fileName).get("dx"),
+        config(fileName).get("dy"),
+        config(fileName).get("xStart"),
+        config(fileName).get("yStart"),
+        config(fileName).get("alpha"));
+  }
+
+  /**
+   * A helper method for returning parameters read from a model configuration
+   * file. This is a workaround for requiring "this()" to be the first statement
+   * in a constructor.
+   */
+  private static HashMap<String, Double> config(String fileName) {
+    HeatConfigFile h = new HeatConfigFile(fileName);
+    return h.load();
   }
 
   public List<Integer> getShape() {
@@ -151,7 +168,7 @@ public class Heat {
    */
   public static void main(String[] args) {
     System.out.println("Example of using Heat class");
-    Heat heat = new Heat();
+    Heat heat = new Heat("testing/data/heat.xml");
     System.out.println("shape: " + heat.getShape().toString());
     System.out.println("spacing: " + heat.getSpacing().toString());
     System.out.println("origin: " + heat.getOrigin().toString());

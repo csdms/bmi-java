@@ -89,7 +89,9 @@ public class HeatTest {
    */
   @Test
   public final void testHeatString() {
-    fail("Not yet implemented"); // TODO
+    String fileName = "testing/data/heat.xml";
+    Heat newHeat = new Heat(fileName);
+    assertNotNull(newHeat);
   }
 
   /**
