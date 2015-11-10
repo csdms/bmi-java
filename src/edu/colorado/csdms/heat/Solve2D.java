@@ -1,5 +1,7 @@
 package edu.colorado.csdms.heat;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,15 +22,15 @@ public class Solve2D {
   public static double[][] solve(double[][] temperature, List<Integer> shape,
       List<Double> spacing, Double alpha, Double timeStep) {
 
-    Integer topRow = shape.get(0) - 1;
-    Integer topCol = shape.get(1) - 1;
-    Double dx2 = Math.pow(spacing.get(1), 2.0);
-    Double dy2 = Math.pow(spacing.get(0), 2.0);
+    Integer topRowIndex = shape.get(1) - 1;
+    Integer topColIndex = shape.get(0) - 1;
+    Double dx2 = Math.pow(spacing.get(0), 2.0);
+    Double dy2 = Math.pow(spacing.get(1), 2.0);
     Double c = alpha * timeStep / (dx2 + dy2);
-    double[][] newTemperature = new double[shape.get(0)][shape.get(1)];
+    double[][] newTemperature = new double[shape.get(1)][shape.get(0)];
     
-    for (int i = 1; i < topRow; i++) {
-      for (int j = 1; j < topCol; j++) {
+    for (int i = 1; i < topRowIndex; i++) {
+      for (int j = 1; j < topColIndex; j++) {
         Double rowOp = dx2 * (temperature[i][j - 1] + temperature[i][j + 1]);
         Double colOp = dy2 * (temperature[i - 1][j] + temperature[i + 1][j]);
         newTemperature[i][j] =
@@ -36,18 +38,18 @@ public class Solve2D {
       }
     }
 
-    for (int i = 0; i < shape.get(0); i++) {
-      newTemperature[i][0] = 0.0;
-      newTemperature[i][topCol] = 0.0;
-    }
-
-    for (int j = 0; j < shape.get(1); j++) {
+    for (int j = 0; j < shape.get(0); j++) {
       newTemperature[0][j] = 0.0;
-      newTemperature[topRow][j] = 0.0;
+      newTemperature[topRowIndex][j] = 0.0;
     }
 
-    for (int i = 1; i < topRow; i++) {
-      for (int j = 1; j < topCol; j++) {
+    for (int i = 0; i < shape.get(1); i++) {
+      newTemperature[i][0] = 0.0;
+      newTemperature[i][topColIndex] = 0.0;
+    }
+
+    for (int i = 1; i < topRowIndex; i++) {
+      for (int j = 1; j < topColIndex; j++) {
         newTemperature[i][j] += temperature[i][j];
       }
     }
