@@ -243,7 +243,9 @@ public class HeatTest {
    */
   @Test
   public final void testAdvanceInTime() {
-    fail("Not yet implemented"); // TODO
+    Double finalTime = heat.getTime() + heat.getTimeStep();
+    heat.advanceInTime();
+    assertEquals(finalTime, heat.getTime());
   }
 
 }
