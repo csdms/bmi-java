@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Heat model parameter values -->
 <model>
-	<nRows>10</nRows>
-	<nCols>20</nCols>
-	<dx>1.0</dx>
-	<dy>1.0</dy>
-	<xStart>0.0</xStart>
-	<yStart>0.0</yStart>
-	<alpha>1.0</alpha>
+   <parameter name="nRows" value="10" />
+   <parameter name="nCols" value="20" />
+   <parameter name="dx" value="1.0" />
+   <parameter name="dy" value="1.0" />
+   <parameter name="xStart" value="0.0" />
+   <parameter name="yStart" value="0.0" />
+   <parameter name="alpha" value="1.0" />
 </model>
