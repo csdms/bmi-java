@@ -161,8 +161,7 @@ public class BmiHeat implements BMI {
 
   @Override
   public String getVarType(String varName) {
-    // TODO Auto-generated method stub
-    return null;
+    return values.get(varName).getClass().getName();
   }
 
   @Override
@@ -172,14 +171,16 @@ public class BmiHeat implements BMI {
 
   @Override
   public int getVarItemsize(String varName) {
-    // TODO Auto-generated method stub
-    return 0;
+    int itemSize = 0;
+    if (getVarType(varName).equals("[D")) {
+      itemSize = 8;
+    }
+    return itemSize;
   }
 
   @Override
   public int getVarNbytes(String varName) {
-    // TODO Auto-generated method stub
-    return 0;
+    return getVarItemsize(varName) * values.get(varName).length;
   }
 
   @Override
@@ -202,8 +203,7 @@ public class BmiHeat implements BMI {
 
   @Override
   public <T> T getValueAtIndices(String varName, int[] indices) {
-    // TODO Auto-generated method stub
-    return null;
+    return null; // Not implemented
   }
 
   @Override

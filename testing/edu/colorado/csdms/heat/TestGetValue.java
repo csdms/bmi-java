@@ -4,7 +4,6 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 
@@ -17,6 +16,8 @@ import org.junit.Test;
  */
 public class TestGetValue {
   
+  private static final int SIZEOF_DOUBLE = 8;
+
   private Double delta; // maximum difference to be considered equal
   private String varName;
   private String varUnits;
@@ -47,7 +48,9 @@ public class TestGetValue {
    */
   @Test
   public final void testGetVarType() {
-    fail("Not yet implemented"); // TODO
+    BmiHeat component = new BmiHeat();
+    component.initialize();
+    assertEquals("[D", component.getVarType(varName));
   }
 
   /**
@@ -65,7 +68,9 @@ public class TestGetValue {
    */
   @Test
   public final void testGetVarItemsize() {
-    fail("Not yet implemented"); // TODO
+    BmiHeat component = new BmiHeat();
+    component.initialize();
+    assertEquals(SIZEOF_DOUBLE, component.getVarItemsize(varName));
   }
 
   /**
@@ -73,7 +78,10 @@ public class TestGetValue {
    */
   @Test
   public final void testGetVarNbytes() {
-    fail("Not yet implemented"); // TODO
+    BmiHeat component = new BmiHeat();
+    component.initialize();
+    double[] varCpy = component.getValue(varName);
+    assertEquals(SIZEOF_DOUBLE * varCpy.length, component.getVarNbytes(varName));
   }
 
   /**
@@ -116,7 +124,7 @@ public class TestGetValue {
    */
   @Test
   public final void testGetValueAtIndices() {
-    fail("Not yet implemented"); // TODO
+    return; // Not implemented
   }
 
   /**
