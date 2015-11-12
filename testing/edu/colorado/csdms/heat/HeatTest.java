@@ -20,7 +20,6 @@ public class HeatTest {
   private List<Double> origin;
   private Double alpha;
   private Double time;
-  private Double timeStep;
   private double[][] temperature;
   private Heat heat;
   
@@ -40,7 +39,6 @@ public class HeatTest {
     heat = new Heat(nRows, nCols, dx, dy, xStart, yStart, alpha);
 
     time = 0.0;
-    timeStep = 0.25;
     shape = new ArrayList<Integer>(Arrays.asList(nRows, nCols));
     spacing = new ArrayList<Double>(Arrays.asList(dx, dy));
     origin = new ArrayList<Double>(Arrays.asList(xStart, yStart));
