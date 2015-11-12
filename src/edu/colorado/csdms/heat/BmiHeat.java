@@ -188,10 +188,10 @@ public class BmiHeat implements BMI {
     return 0;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public <T> T getValue(String varName) {
-    // TODO Auto-generated method stub
-    return null;
+    return (T) values.get(varName).clone();
   }
 
   @SuppressWarnings("unchecked")
