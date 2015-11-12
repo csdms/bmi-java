@@ -207,18 +207,6 @@ public class BmiHeat implements BMI {
   }
 
   @Override
-  public <T> void setValue(String varName, T src) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
-  public <T> void setValueAtIndices(String varName, int[] indices, T src) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  @Override
   public int[] getGridShape(int gridId) {
     // TODO Auto-generated method stub
     return null;
@@ -277,5 +265,38 @@ public class BmiHeat implements BMI {
   @Override
   public int[] getGridOffset(int gridId) {
     return null; // Not implemented for Heat
+  }
+
+  @Override
+  public void setValue(String varName, double[] src) {
+    double[] varRef = getValueRef(varName);
+    for (int i = 0; i < varRef.length; i++) {
+      varRef[i] = src[i];
+    }
+  }
+
+  @Override
+  public void setValue(String varName, int[] src) {
+    return; // Not implemented for Heat
+  }
+
+  @Override
+  public void setValue(String varName, String[] src) {
+    return; // Not implemented for Heat
+  }
+
+  @Override
+  public void setValueAtIndices(String varName, int[] indices, double[] src) {
+    return; // Not implemented for Heat
+  }
+
+  @Override
+  public void setValueAtIndices(String varName, int[] indices, int[] src) {
+    return; // Not implemented for Heat
+  }
+
+  @Override
+  public void setValueAtIndices(String varName, int[] indices, String[] src) {
+    return; // Not implemented for Heat
   }
 }

@@ -12,10 +12,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * JUnit tests for the getter methods of the {@link BmiHeat} class.
+ * JUnit tests for the getter and setter methods of the {@link BmiHeat} class.
  */
-public class TestGetValue {
-  
+public class TestGetAndSetValue {
+
   private static final int SIZEOF_DOUBLE = 8;
 
   private Double delta; // maximum difference to be considered equal
@@ -44,7 +44,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getVarType(java.lang.String)}.
+   * Test method for {@link BmiHeat#getVarType(java.lang.String)}.
    */
   @Test
   public final void testGetVarType() {
@@ -54,7 +54,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getVarUnits(java.lang.String)}.
+   * Test method for {@link BmiHeat#getVarUnits(java.lang.String)}.
    */
   @Test
   public final void testGetVarUnits() {
@@ -64,7 +64,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getVarItemsize(java.lang.String)}.
+   * Test method for {@link BmiHeat#getVarItemsize(java.lang.String)}.
    */
   @Test
   public final void testGetVarItemsize() {
@@ -74,7 +74,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getVarNbytes(java.lang.String)}.
+   * Test method for {@link BmiHeat#getVarNbytes(java.lang.String)}.
    */
   @Test
   public final void testGetVarNbytes() {
@@ -85,7 +85,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getValue(java.lang.String)}.
+   * Test method for {@link BmiHeat#getValue(java.lang.String)}.
    */
   @Test
   public final void testGetValue() {
@@ -94,13 +94,13 @@ public class TestGetValue {
 
     double[] varCpy1 = component.getValue(varName);
     double[] varCpy2 = component.getValue(varName);
-    
+
     assertNotSame(varCpy1, varCpy2);
     assertArrayEquals(varCpy1, varCpy2, delta);
   }
-  
+
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getValueRef(java.lang.String)}.
+   * Test method for {@link BmiHeat#getValueRef(java.lang.String)}.
    */
   @Test
   public final void testGetValueRef() {
@@ -109,10 +109,10 @@ public class TestGetValue {
 
     double[] varRef = component.getValueRef(varName);
     double[] varCpy = component.getValue(varName);
-    
+
     assertNotSame(varCpy, varRef);
     assertArrayEquals(varRef, varCpy, delta);
-    
+
     for (int i = 0; i < 5; i++) {
       component.update();
     }
@@ -120,7 +120,7 @@ public class TestGetValue {
   }
 
   /**
-   * Test method for {@link edu.colorado.csdms.heat.BmiHeat#getValueAtIndices(java.lang.String, int[])}.
+   * Test method for {@link BmiHeat#getValueAtIndices(java.lang.String, int[])}.
    */
   @Test
   public final void testGetValueAtIndices() {
@@ -134,10 +134,41 @@ public class TestGetValue {
   public final void testGetInitialValue() {
     BmiHeat component = new BmiHeat();
     component.initialize();
+
     double[] varCpy = component.getValue(varName);
+
     Arrays.sort(varCpy);
     assertTrue(varCpy[0] >= initialTempMin);
     assertTrue(varCpy[varCpy.length - 1] <= initialTempMax);
+  }
+
+  /**
+   * Test method for {@link BmiHeat#setValue(String, Object)}.
+   */
+  @Test
+  public final void testSetValue() {
+    BmiHeat component = new BmiHeat();
+    component.initialize();
+
+    double[] varRef = component.getValueRef(varName);
+    double[] varNew1 = new double[varRef.length];
+    varNew1[0] = 5.0;
+
+    component.setValue(varName, varNew1);
+
+    double[] varNew2 = component.getValueRef(varName);
+
+    assertEquals(varRef, varNew2);
+    assertNotSame(varNew1, varNew2);
+    assertArrayEquals(varNew2, varNew1, delta);
+  }
+
+  /**
+   * Test method for {@link BmiHeat#setValueAtIndices(String, int[], Object)}.
+   */
+  @Test
+  public final void testSetValueAtIndices() {
+    return; // Not implemented
   }
 
 }
