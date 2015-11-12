@@ -20,7 +20,7 @@ public class BmiHeat implements BMI {
     {"plate_surface__temperature"};
   
   private Heat model;
-  private HashMap<String, double[][]> values;
+  private HashMap<String, double[]> values;
   private HashMap<String, String> varUnits;
   private HashMap<Integer, String> grids;
   private HashMap<Integer, String> gridType;
@@ -30,7 +30,7 @@ public class BmiHeat implements BMI {
    */
   public BmiHeat() {
     model = null;
-    values = new HashMap<String, double[][]>();
+    values = new HashMap<String, double[]>();
     varUnits = new HashMap<String, String>();
     grids = new HashMap<Integer, String>();
     gridType = new HashMap<Integer, String>();
@@ -56,12 +56,32 @@ public class BmiHeat implements BMI {
    * instance.
    */
   private void initializeHelper() {
-    values.put(INPUT_VAR_NAMES[0], model.getTemperature());
+    values.put(INPUT_VAR_NAMES[0], flattenArray2D(model.getTemperature()));
     varUnits.put(INPUT_VAR_NAMES[0], "K");
     grids.put(0, INPUT_VAR_NAMES[0]);
     gridType.put(0, "uniform_rectilinear_grid");
   }
   
+  /**
+   * A helper that converts a 2D array of doubles into a 1D array.
+   *
+   * @param array2D a 2D array of doubles
+   * @return a 1D array of doubles
+   */
+  private double[] flattenArray2D(double[][] array2D) {
+    int size1D = 0;
+    for (double[] array : array2D) {
+      size1D += array.length;
+    }
+    double[] array1D = new double[size1D];
+    int pos = 0;
+    for (double[] array : array2D) {
+      System.arraycopy(array, 0, array1D, pos, array.length);
+      pos += array.length;
+    }
+    return array1D;
+  }
+
   @Override
   public void update() {
     model.advanceInTime();
