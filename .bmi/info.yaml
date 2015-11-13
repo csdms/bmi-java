@@ -1,0 +1,9 @@
+summary:
+  An example of a model that implements the Java bindings for the
+  Basic Model Interface. This model solves the 2D Heat equation on a
+  uniform rectilinear grid.
+url: https://github.com/csdms/bmi-java
+author: Mark Piper
+email: mark.piper@colorado.edu
+version: 0.1
+license: MIT

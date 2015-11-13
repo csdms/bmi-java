@@ -1,0 +1,8 @@
+name: HeatJava
+language: java
+
+package: edu.colorado.csdms.heat
+class: BmiHeat
+
+build:
+  - ant build
