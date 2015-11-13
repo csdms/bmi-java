@@ -5,6 +5,8 @@ package edu.colorado.csdms.heat;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.colorado.csdms.bmi.BMI;
 
@@ -185,8 +187,12 @@ public class BmiHeat implements BMI {
 
   @Override
   public int getVarGrid(String varName) {
-    // TODO Auto-generated method stub
-    return 0;
+    for (Map.Entry<Integer, String> entry : grids.entrySet()) {
+      if (entry.getValue().equals(varName)) {
+        return entry.getKey();
+      }
+    }
+    return -1;
   }
 
   @SuppressWarnings("unchecked")
@@ -208,8 +214,12 @@ public class BmiHeat implements BMI {
 
   @Override
   public int[] getGridShape(int gridId) {
-    // TODO Auto-generated method stub
-    return null;
+    List<Integer> shapeAsList = model.getShape();
+    int[] shapeAsArray = new int[shapeAsList.size()];
+    for (int i = 0; i < shapeAsArray.length; i++) {
+      shapeAsArray[i] = shapeAsList.get(i);
+    }
+    return shapeAsArray;
   }
 
   @Override
@@ -229,32 +239,43 @@ public class BmiHeat implements BMI {
 
   @Override
   public int getGridRank(int gridId) {
-    // TODO Auto-generated method stub
-    return 0;
+    List<Integer> shapeAsList = model.getShape();
+    return shapeAsList.size();
   }
 
   @Override
   public int getGridSize(int gridId) {
-    // TODO Auto-generated method stub
-    return 0;
+    List<Integer> shapeAsList = model.getShape();
+    int product = 1;
+    for (int i = 0; i < shapeAsList.size(); i++) {
+      product *= shapeAsList.get(i);
+    }
+    return product;
   }
 
   @Override
   public String getGridType(int gridId) {
-    // TODO Auto-generated method stub
-    return null;
+    return gridType.get(gridId);
   }
 
   @Override
   public double[] getGridSpacing(int gridId) {
-    // TODO Auto-generated method stub
-    return null;
+    List<Double> spacingAsList = model.getSpacing();
+    double[] spacingAsArray = new double[spacingAsList.size()];
+    for (int i = 0; i < spacingAsArray.length; i++) {
+      spacingAsArray[i] = spacingAsList.get(i);
+    }
+    return spacingAsArray;
   }
 
   @Override
   public double[] getGridOrigin(int gridId) {
-    // TODO Auto-generated method stub
-    return null;
+    List<Double> originAsList = model.getOrigin();
+    double[] originAsArray = new double[originAsList.size()];
+    for (int i = 0; i < originAsArray.length; i++) {
+      originAsArray[i] = originAsList.get(i);
+    }
+    return originAsArray;
   }
 
   @Override
