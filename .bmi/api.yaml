@@ -4,5 +4,8 @@ language: java
 package: edu.colorado.csdms.heat
 class: BmiHeat
 
+classpath:
+  - build
+
 build:
   - ant build
