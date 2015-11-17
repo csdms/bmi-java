@@ -5,6 +5,7 @@
 	<property name="test.data.dir" value="${test.src.dir}/data" />
 	<property name="build.dir" value="build" />
 	<property name="build.data.dir" value="${build.dir}/data" />
+   <property name="doc.dir" value="doc" />
 
 	<path id="classpath.base" />
 
@@ -55,9 +56,20 @@
 		<echo message="Tests done." />
 	</target>
 
+	<!-- Create javadoc documentation. -->
+	<target name="doc">
+		<javadoc packagenames="edu.colorado.csdms.*" sourcepath="${main.src.dir}"
+		    destdir="${doc.dir}" author="true" version="true" use="true"
+		    overview="${main.src.dir}/overview.html"
+		    windowtitle="CSDMS BMI-Java Documentation">
+		</javadoc>
+		<echo message="Docs done." />
+	</target>
+
 	<!-- Delete all built files. -->
 	<target name="clean">
 		<delete dir="${build.dir}" />
+		<delete dir="${doc.dir}" />
 		<echo message="Clean done." />
 	</target>
 </project>
