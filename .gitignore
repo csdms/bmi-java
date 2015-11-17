@@ -15,4 +15,11 @@ hs_err_pid*
 /bin/
 /build/
 
+# Javadoc
+/doc/
+
+# Eclipse project
 .project
+
+# Annoying MacOSX files
+.DS_Store
