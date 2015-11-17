@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/csdms/bmi-java.svg?branch=master)](https://travis-ci.org/csdms/bmi-java)
+
 # bmi-java
 
 Java bindings for the Basic Model Interface.
