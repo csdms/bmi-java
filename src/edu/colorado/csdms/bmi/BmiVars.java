@@ -46,7 +46,7 @@ public interface BmiVars {
    * Gets the total size, in bytes, of the given variable.
    * 
    * @param varName an input or output variable name, a CSDMS Standard Name
-   * @retu the size of the variable, counted in bytes.
+   * @return the size of the variable, counted in bytes.
    */
   public int getVarNbytes(String varName);
   
