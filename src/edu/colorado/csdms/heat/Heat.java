@@ -141,10 +141,11 @@ public class Heat {
 
   /**
    * Clones a 2D double array.
-   *
+   * <p>
+   * See http://stackoverflow.com/a/1686523/1563298
+   * 
    * @param array a 2d array of type double
    * @return a clone of the input array
-   * @see http://stackoverflow.com/a/1686523/1563298
    */
   private double[][] cloneArray2D(double[][] array) {
     double [][] clone = new double[array.length][];
