@@ -68,7 +68,7 @@ public class TestIRF {
   }
 
   @Test
-  public final void testFinish() {
+  public final void testFinalize() {
     return; // Nothing to test
   }
 
