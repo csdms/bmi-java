@@ -5,7 +5,10 @@
 	<property name="test.data.dir" value="${test.src.dir}/data" />
 	<property name="build.dir" value="build" />
 	<property name="build.data.dir" value="${build.dir}/data" />
-   <property name="doc.dir" value="doc" />
+	<property name="dist.dir" value="dist" />
+	<property name="jarfile" value="${ant.project.name}.jar"/>
+	<property name="doc.dir" value="doc" />
+	<property name="main.class" value="edu.colorado.csdms.heat.BmiHeat"/>
 
 	<path id="classpath.base" />
 
@@ -56,6 +59,16 @@
 		<echo message="Tests done." />
 	</target>
 
+	<!-- Make a distributable jarfile. -->
+	<target name="dist" depends="build">
+		<mkdir dir="${dist.dir}"/>
+		<jar destfile="${dist.dir}/${jarfile}" basedir="${build.dir}">
+			<manifest>
+			   <attribute name="Main-Class" value="${main.class}"/>
+			</manifest>
+		</jar>
+	</target>
+
 	<!-- Create javadoc documentation. -->
 	<target name="doc">
 		<javadoc packagenames="edu.colorado.csdms.*" sourcepath="${main.src.dir}"
@@ -69,6 +82,7 @@
 	<!-- Delete all built files. -->
 	<target name="clean">
 		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
 		<delete dir="${doc.dir}" />
 		<echo message="Clean done." />
 	</target>
