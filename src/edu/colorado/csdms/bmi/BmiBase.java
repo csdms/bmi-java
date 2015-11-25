@@ -53,10 +53,7 @@ public interface BmiBase {
    * Performs all tasks that take place after exiting the model's time loop.
    * This typically includes deallocating memory, closing files and printing
    * reports.
-   * <p>
-   * Note that the standard BMI name for this method, <tt>finalize</tt>, can't
-   * be used in Java.
    */
-  public void finish();
+  public void finalize();
 
 }

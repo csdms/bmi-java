@@ -4,8 +4,7 @@ language: java
 package: edu.colorado.csdms.heat
 class: BmiHeat
 
-classpath:
-  - build
-
 build:
-  - ant build
+  - ant dist
+  - install -d -m755 $CSDMS_PREFIX/lib
+  - install -m664 dist/bmi-java.jar $CSDMS_PREFIX/lib

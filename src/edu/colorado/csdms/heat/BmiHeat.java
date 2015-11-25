@@ -107,7 +107,7 @@ public class BmiHeat implements BMI {
   }
 
   @Override
-  public void finish() {
+  public void finalize() {
     // Nothing to do.
   }
 
