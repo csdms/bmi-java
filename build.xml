@@ -25,7 +25,8 @@
 	<!-- Build all source files. -->
 	<target name="compile">
 		<mkdir dir="${build.dir}"/>
-		<javac srcdir="${main.src.dir}" destdir="${build.dir}" includeantruntime="false">
+		<javac srcdir="${main.src.dir}" destdir="${build.dir}"
+		        excludes="**/package-info.java" includeantruntime="false">
 			<classpath refid="classpath.base"/>
 		</javac>
 		<echo message="Compile done." />
@@ -33,11 +34,11 @@
 
 	<!-- Build all source and test files. -->
 	<target name="build" depends="compile">
-		<mkdir dir="${build.dir}"/>
-		<javac srcdir="${test.src.dir}" destdir="${build.dir}" includeantruntime="false">
+		<javac srcdir="${test.src.dir}" destdir="${build.dir}"
+			excludes="**/package-info.java" includeantruntime="false">
 			<classpath refid="classpath.test"/>
 		</javac>
-	   <mkdir dir="${build.data.dir}"/>
+		<mkdir dir="${build.data.dir}"/>
 		<copy todir="${build.data.dir}">
 			<fileset dir="${test.data.dir}" />
 		</copy>
