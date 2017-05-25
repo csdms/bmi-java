@@ -15,3 +15,9 @@ To compile the BMI Java bindings and run the JUnit tests in `src/test/java`, run
     $ mvn package
 
 This will generate a jar file at `target/bmi-java.jar`.
+
+## Build javadocs
+
+    $ mvn javadoc:javadoc
+    
+This will generate javadocs at `target/site/apidocs`. See the [Maven Javadocs Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html) for more details.
