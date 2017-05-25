@@ -2,23 +2,22 @@
 
 # bmi-java
 
-Java bindings for the Basic Model Interface.
+Java bindings for the Basic Model Interface. You'll need to install [Maven](http://maven.apache.org) to build and run tests.
 
 ## Build
 
-To build the BMI Java bindings and tests:
+To compile the BMI Java bindings and run the JUnit tests in `src/test/java`, run
 
-    $ ant build
+    $ mvn test
 
-The resulting `*.class` files
-are written, by default, to the **build** directory.
-The location of this directory can be configured by editing
-the Ant build file, **build.xml**.
+## Create the bmi-java jar
 
-To run the `Heat` example:
+    $ mvn package
 
-    $ java -cp ./build edu.colorado.csdms.heat.Heat
+This will generate a jar file at `target/bmi-java.jar`.
 
-The complete set of JUnit tests can be built and run with:
+## Build javadocs
 
-    $ ant test
+    $ mvn javadoc:javadoc
+    
+This will generate javadocs at `target/site/apidocs`. See the [Maven Javadocs Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html) for more details.

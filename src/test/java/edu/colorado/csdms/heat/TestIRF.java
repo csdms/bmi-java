@@ -33,7 +33,7 @@ public class TestIRF {
   @Test
   public final void testInitializeString() {
     BmiHeat component = new BmiHeat();
-    component.initialize("testing/data/heat.xml");
+    component.initialize("src/test/resources/data/heat.xml");
     assertNotNull(component);
     assertEquals(0.0, component.getCurrentTime(), delta);
   }

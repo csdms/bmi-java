@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+vim:sts=2:sw=2
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <organization>
+    <name>CSDMS</name>
+    <url>https://csdms.colorado.edu</url>
+  </organization>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.colorado.csdms</groupId>
+  <artifactId>bmi-java</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>bmi-java</name>
+  <url>http://github.com/csdms/bmi-java</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://spdx.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>scm:git:https://github.com/csdms/bmi-java</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/csdms/bmi-java/issues</url>
+  </issueManagement>
+  <repositories>
+    <repository>
+      <id>commons.archiva.internal</id>
+      <name>dev.commons Maven2 repository</name>
+      <url>https://dev.commons.asu.edu/archiva/repository/internal</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+    <repository>
+      <id>commons.archiva.snapshots</id>
+      <name>dev.commons Maven2 snapshot repository</name>
+      <url>https://dev.commons.asu.edu/archiva/repository/snapshots</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots><enabled>true</enabled></snapshots>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>bmi-java</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.4</version>
+        <configuration>
+          <links>
+            <link>http://github.com/csdms/bmi-java</link>
+          </links>
+          <detectLinks>true</detectLinks>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

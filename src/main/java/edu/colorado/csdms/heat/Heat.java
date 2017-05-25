@@ -169,7 +169,7 @@ public class Heat {
    */
   public static void main(String[] args) {
     System.out.println("Example of using Heat class");
-    Heat heat = new Heat("testing/data/heat.xml");
+    Heat heat = new Heat("src/test/resources/data/heat.xml");
     System.out.println("shape: " + heat.getShape().toString());
     System.out.println("spacing: " + heat.getSpacing().toString());
     System.out.println("origin: " + heat.getOrigin().toString());
