@@ -87,7 +87,7 @@ public class HeatTest {
    */
   @Test
   public final void testHeatString() {
-    String fileName = "testing/data/heat.xml";
+    String fileName = "src/test/resources/data/heat.xml";
     Heat newHeat = new Heat(fileName);
     assertNotNull(newHeat);
   }
