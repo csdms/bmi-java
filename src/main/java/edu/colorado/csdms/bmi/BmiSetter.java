@@ -9,13 +9,16 @@ package edu.colorado.csdms.bmi;
  * <b>Note:</b> Setters are explicitly defined for types <b>double</b>,
  * <b>int</b>, and <b>String</b>; setters for other types may be added as
  * needed.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public interface BmiSetter {
 
   /**
    * This is a setter for the model, used to change the model's current state.
-   * It accepts, through <tt>src</tt>, a new value for a model variable, with
-   * the size of <tt>src</tt> dependent on the variable.
+   * It accepts, through <em>src</em>, a new value for a model variable, with
+   * the size of <em>src</em> dependent on the variable.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable
@@ -24,8 +27,8 @@ public interface BmiSetter {
 
   /**
    * This is a setter for the model, used to change the model's current state.
-   * It accepts, through <tt>src</tt>, a new value for a model variable, with
-   * the size of <tt>src</tt> dependent on the variable.
+   * It accepts, through <em>src</em>, a new value for a model variable, with
+   * the size of <em>src</em> dependent on the variable.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable
@@ -34,8 +37,8 @@ public interface BmiSetter {
 
   /**
    * This is a setter for the model, used to change the model's current state.
-   * It accepts, through <tt>src</tt>, a new value for a model variable, with
-   * the size of <tt>src</tt> dependent on the variable.
+   * It accepts, through <em>src</em>, a new value for a model variable, with
+   * the size of <em>src</em> dependent on the variable.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable

@@ -9,6 +9,9 @@ package edu.colorado.csdms.bmi;
  * <p>
  * See the <a href="http://csdms.colorado.edu">CSDMS</a> web page for more
  * information about BMI.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public interface BMI extends BmiBase, BmiInfo, BmiTime, BmiVars, BmiGetter,
     BmiSetter, BmiGridRectilinear, BmiGridUniformRectilinear,

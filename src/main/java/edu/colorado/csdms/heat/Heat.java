@@ -10,6 +10,9 @@ import java.util.List;
 
 /**
  * Solve the heat equation on a grid.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public class Heat {
 
@@ -23,7 +26,7 @@ public class Heat {
 
   /**
    * Create a new Heat model.
-   * 
+   *
    * @param nRows the number of rows in the solution grid
    * @param nCols the number of columns in the solution grid
    * @param dx distance between columns in grid
@@ -60,7 +63,7 @@ public class Heat {
 
   /**
    * Create a Heat model from settings in a file.
-   * 
+   *
    * @param fileName an XML file with Heat model settings
    */
   public Heat(String fileName) {
@@ -83,58 +86,128 @@ public class Heat {
     return h.load();
   }
 
+  /**
+   * <p>Getter for the field <code>shape</code>.</p>
+   *
+   * @return a {@link java.util.List} object.
+   */
   public List<Integer> getShape() {
     return shape;
   }
 
+  /**
+   * <p>Setter for the field <code>shape</code>.</p>
+   *
+   * @param shape a {@link java.util.List} object.
+   */
   public void setShape(List<Integer> shape) {
     this.shape = shape;
   }
 
+  /**
+   * <p>Getter for the field <code>spacing</code>.</p>
+   *
+   * @return a {@link java.util.List} object.
+   */
   public List<Double> getSpacing() {
     return spacing;
   }
 
+  /**
+   * <p>Setter for the field <code>spacing</code>.</p>
+   *
+   * @param spacing a {@link java.util.List} object.
+   */
   public void setSpacing(List<Double> spacing) {
     this.spacing = spacing;
   }
 
+  /**
+   * <p>Getter for the field <code>origin</code>.</p>
+   *
+   * @return a {@link java.util.List} object.
+   */
   public List<Double> getOrigin() {
     return origin;
   }
 
+  /**
+   * <p>Setter for the field <code>origin</code>.</p>
+   *
+   * @param origin a {@link java.util.List} object.
+   */
   public void setOrigin(List<Double> origin) {
     this.origin = origin;
   }
 
+  /**
+   * <p>Getter for the field <code>alpha</code>.</p>
+   *
+   * @return a {@link java.lang.Double} object.
+   */
   public Double getAlpha() {
     return alpha;
   }
 
+  /**
+   * <p>Setter for the field <code>alpha</code>.</p>
+   *
+   * @param alpha a {@link java.lang.Double} object.
+   */
   public void setAlpha(Double alpha) {
     this.alpha = alpha;
   }
 
+  /**
+   * <p>Getter for the field <code>time</code>.</p>
+   *
+   * @return a {@link java.lang.Double} object.
+   */
   public Double getTime() {
     return time;
   }
 
+  /**
+   * <p>Setter for the field <code>time</code>.</p>
+   *
+   * @param time a {@link java.lang.Double} object.
+   */
   public void setTime(Double time) {
     this.time = time;
   }
 
+  /**
+   * <p>Getter for the field <code>timeStep</code>.</p>
+   *
+   * @return a {@link java.lang.Double} object.
+   */
   public Double getTimeStep() {
     return timeStep;
   }
 
+  /**
+   * <p>Setter for the field <code>timeStep</code>.</p>
+   *
+   * @param timeStep a {@link java.lang.Double} object.
+   */
   public void setTimeStep(Double timeStep) {
     this.timeStep = timeStep;
   }
 
+  /**
+   * <p>Getter for the field <code>temperature</code>.</p>
+   *
+   * @return an array of double.
+   */
   public double[][] getTemperature() {
     return temperature;
   }
 
+  /**
+   * <p>Setter for the field <code>temperature</code>.</p>
+   *
+   * @param temperature an array of double.
+   */
   public void setTemperature(double[][] temperature) {
     this.temperature = temperature;
   }
@@ -165,7 +238,9 @@ public class Heat {
   }
 
   /**
-   * @param args
+   * <p>main.</p>
+   *
+   * @param args an array of {@link java.lang.String} objects.
    */
   public static void main(String[] args) {
     System.out.println("Example of using Heat class");
