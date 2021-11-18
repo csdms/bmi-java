@@ -14,6 +14,9 @@ import org.w3c.dom.NodeList;
 /**
  * Represents a model configuration file containing parameter values for the
  * heat model.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public class HeatConfigFile {
   
@@ -23,7 +26,7 @@ public class HeatConfigFile {
 
   /**
    * Makes an instance of HeatConfigFile.
-   * 
+   *
    * @param fileName the path to the configuration file
    */
   public HeatConfigFile(String fileName) {
@@ -33,8 +36,8 @@ public class HeatConfigFile {
   
   /**
    * Extracts parameter names and values from the file.
-   * 
-   * @return a {@link HashMap} with parameter names and values
+   *
+   * @return a {@link java.util.HashMap} with parameter names and values
    */
   public HashMap<String, Double> load() {
     loadFile();

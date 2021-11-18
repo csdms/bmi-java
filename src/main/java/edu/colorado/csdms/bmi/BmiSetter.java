@@ -9,6 +9,9 @@ package edu.colorado.csdms.bmi;
  * <b>Note:</b> Setters are explicitly defined for types <b>double</b>,
  * <b>int</b>, and <b>String</b>; setters for other types may be added as
  * needed.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public interface BmiSetter {
 

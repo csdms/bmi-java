@@ -4,12 +4,15 @@ import java.util.List;
 
 /**
  * A solver for the 2D heat equation on a uniform grid.
+ *
+ * @author mpiper
+ * @version $Id: $Id
  */
 public class Solve2D {
 
   /**
    * Solve the 2D heat equation on a uniform grid.
-   * 
+   *
    * @param temperature a 2D array of temperatures
    * @param shape the dimensions of the grid, in (rows, cols)
    * @param spacing the distance between rows and columns, respectively
