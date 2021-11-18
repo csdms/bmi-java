@@ -18,19 +18,19 @@ public interface BmiVars {
    * Get the data type of the given variable.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
-   * @return the variable type; e.g., <tt>int</tt>, <tt>double</tt>,
-   *         <tt>String</tt>.
+   * @return the variable type; e.g., <code>int</code>, <code>double</code>,
+   *         <code>String</code>.
    */
   public String getVarType(String varName);
   
   /**
    * Get units of the given variable. Standard unit names, in lower case, should
-   * be used, such as <tt>meters</tt> or <tt>seconds</tt>. Standard
-   * abbreviations, like <tt>m</tt> for meters, are also supported. For
+   * be used, such as "meters" or "seconds". Standard
+   * abbreviations, like "m" for meters, are also supported. For
    * variables with compound units, each unit name is separated by a single
    * space, with exponents other than 1 placed immediately after the name, as in
-   * <tt>m s-1</tt> for velocity, <tt>W m-2</tt> for an energy flux, or
-   * <tt>km2</tt> for an area.
+   * "m s-1" for velocity, "W m-2" for an energy flux, or
+   * "km2" for an area.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the variable units
@@ -56,7 +56,7 @@ public interface BmiVars {
   /**
    * Gets the <em>grid identifier</em> for the given variable.
    * <p>
-   * Get <tt>varName</tt> from {@link edu.colorado.csdms.bmi.BmiInfo#getInputVarNames()} or
+   * Get <code>varName</code> from {@link edu.colorado.csdms.bmi.BmiInfo#getInputVarNames()} or
    * {@link edu.colorado.csdms.bmi.BmiInfo#getOutputVarNames()}
    *
    * @param varName an input or output variable name, a CSDMS Standard Name

@@ -16,7 +16,7 @@ public interface BmiBase {
   /**
    * Performs all tasks that take place before entering the model's time loop,
    * including opening files and initializing the model state. Model inputs are
-   * read from a text-based configuration file, specified by <tt>fileName</tt>.
+   * read from a text-based configuration file, specified by <em>fileName</em>.
    *
    * @param fileName the path to the model configuration file
    */
