@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/csdms/bmi-java.svg?branch=master)](https://travis-ci.org/csdms/bmi-java)
+[![Maven CI](https://github.com/csdms/bmi-java/actions/workflows/maven.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/maven.yml)
 
 # bmi-java
 
@@ -20,4 +20,4 @@ This will generate a jar file at `target/bmi-java.jar`.
 
     $ mvn javadoc:javadoc
     
-This will generate javadocs at `target/site/apidocs`. See the [Maven Javadocs Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html) for more details.
+This will generate javadocs at `target/site/apidocs`. See the [Maven Javadoc Plugin](https://maven.apache.org/plugins/maven-javadoc-plugin/usage.html) for more details.
