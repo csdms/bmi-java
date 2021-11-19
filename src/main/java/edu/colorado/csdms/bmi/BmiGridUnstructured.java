@@ -17,7 +17,7 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridX(int gridId);
+  double[] getGridX(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the transverse direction.
@@ -25,7 +25,7 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridY(int gridId);
+  double[] getGridY(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the normal direction.
@@ -33,7 +33,7 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridZ(int gridId);
+  double[] getGridZ(int gridId);
 
   /**
    * Get the connectivity array of the grid.
@@ -41,14 +41,14 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the graph of connections between the grid nodes
    */
-  public int[] getGridConnectivity(int gridId);
-  
+  int[] getGridConnectivity(int gridId);
+
   /**
    * Get offsets for the grid nodes.
    *
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the offsets for the grid nodes
    */
-  public int[] getGridOffset(int gridId);
-  
+  int[] getGridOffset(int gridId);
+
 }

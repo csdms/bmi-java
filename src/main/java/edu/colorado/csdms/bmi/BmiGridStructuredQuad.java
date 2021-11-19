@@ -17,7 +17,7 @@ public interface BmiGridStructuredQuad extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the dimensions of the grid
    */
-  public int[] getGridShape(int gridId);
+  int[] getGridShape(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the streamwise direction.
@@ -25,7 +25,7 @@ public interface BmiGridStructuredQuad extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridX(int gridId);
+  double[] getGridX(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the transverse direction.
@@ -33,7 +33,7 @@ public interface BmiGridStructuredQuad extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridY(int gridId);
+  double[] getGridY(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the normal direction.
@@ -41,6 +41,6 @@ public interface BmiGridStructuredQuad extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  public double[] getGridZ(int gridId);
+  double[] getGridZ(int gridId);
 
 }

@@ -7,7 +7,8 @@ package edu.colorado.csdms.bmi;
  * Methods that get information about input and output variables. These BMI
  * functions obtain information about a particular input or output variable.
  * They must accommodate any variable that is returned by the BMI functions
- * {@link edu.colorado.csdms.bmi.BmiInfo#getInputVarNames()} or {@link edu.colorado.csdms.bmi.BmiInfo#getOutputVarNames()}.
+ * {@link edu.colorado.csdms.bmi.BmiInfo#getInputVarNames()} or
+ * {@link edu.colorado.csdms.bmi.BmiInfo#getOutputVarNames()}.
  *
  * @author mpiper
  * @version $Id: $Id
@@ -21,8 +22,8 @@ public interface BmiVars {
    * @return the variable type; e.g., <code>int</code>, <code>double</code>,
    *         <code>String</code>.
    */
-  public String getVarType(String varName);
-  
+  String getVarType(String varName);
+
   /**
    * Get units of the given variable. Standard unit names, in lower case, should
    * be used, such as "meters" or "seconds". Standard
@@ -35,24 +36,24 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the variable units
    */
-  public String getVarUnits(String varName);
-  
+  String getVarUnits(String varName);
+
   /**
    * Gets the memory use for each array element in bytes.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return item size in bytes
    */
-  public int getVarItemsize(String varName);
-  
+  int getVarItemsize(String varName);
+
   /**
    * Gets the total size, in bytes, of the given variable.
    *
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the size of the variable, counted in bytes.
    */
-  public int getVarNbytes(String varName);
-  
+  int getVarNbytes(String varName);
+
   /**
    * Gets the <em>grid identifier</em> for the given variable.
    * <p>
@@ -62,6 +63,6 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the grid id
    */
-  public int getVarGrid(String varName);
+  int getVarGrid(String varName);
 
 }

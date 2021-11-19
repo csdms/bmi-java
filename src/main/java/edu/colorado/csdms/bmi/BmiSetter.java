@@ -23,7 +23,7 @@ public interface BmiSetter {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable
    */
-  public void setValue(String varName, double[] src);
+  void setValue(String varName, double[] src);
 
   /**
    * This is a setter for the model, used to change the model's current state.
@@ -33,7 +33,7 @@ public interface BmiSetter {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable
    */
-  public void setValue(String varName, int[] src);
+  void setValue(String varName, int[] src);
 
   /**
    * This is a setter for the model, used to change the model's current state.
@@ -43,7 +43,7 @@ public interface BmiSetter {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @param src the new value for the specified variable
    */
-  public void setValue(String varName, String[] src);
+  void setValue(String varName, String[] src);
 
   /**
    * Specifies a new value for a model variable at a particular location.
@@ -52,7 +52,7 @@ public interface BmiSetter {
    * @param indices the indices into the variable array
    * @param src the new value for the specified variable
    */
-  public void setValueAtIndices(String varName, int[] indices, double[] src);
+  void setValueAtIndices(String varName, int[] indices, double[] src);
 
   /**
    * Specifies a new value for a model variable at a particular location.
@@ -61,7 +61,7 @@ public interface BmiSetter {
    * @param indices the indices into the variable array
    * @param src the new value for the specified variable
    */
-  public void setValueAtIndices(String varName, int[] indices, int[] src);
+  void setValueAtIndices(String varName, int[] indices, int[] src);
 
   /**
    * Specifies a new value for a model variable at a particular location.
@@ -70,5 +70,5 @@ public interface BmiSetter {
    * @param indices the indices into the variable array
    * @param src the new value for the specified variable
    */
-  public void setValueAtIndices(String varName, int[] indices, String[] src);
+  void setValueAtIndices(String varName, int[] indices, String[] src);
 }

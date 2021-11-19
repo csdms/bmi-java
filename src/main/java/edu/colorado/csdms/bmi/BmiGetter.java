@@ -22,7 +22,7 @@ public interface BmiGetter {
    * @return the value of a model variable
    * @param <T> a T object.
    */
-  public <T> T getValue(String varName);
+  <T> T getValue(String varName);
 
   /**
    * This is a getter for the model, used to access the model's current state.
@@ -33,8 +33,8 @@ public interface BmiGetter {
    * @return a reference to a model variable
    * @param <T> a T object.
    */
-  public <T> T getValueRef(String varName);
-  
+  <T> T getValueRef(String varName);
+
   /**
    * Gets values at particular locations in a model variable.
    *
@@ -43,6 +43,6 @@ public interface BmiGetter {
    * @return the value of the variable at the given location
    * @param <T> a T object.
    */
-  public <T> T getValueAtIndices(String varName, int[] indices);
-  
+  <T> T getValueAtIndices(String varName, int[] indices);
+
 }
