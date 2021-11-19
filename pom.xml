@@ -10,9 +10,9 @@ vim:sts=2:sw=2
   </organization>
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.colorado.csdms</groupId>
-  <artifactId>bmi-java</artifactId>
+  <artifactId>bmi</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>2.0</version>
   <name>bmi-java</name>
   <url>http://github.com/csdms/bmi-java</url>
   <properties>
@@ -57,7 +57,7 @@ vim:sts=2:sw=2
     </dependency>
   </dependencies>
   <build>
-    <finalName>bmi-java</finalName>
+    <finalName>bmi</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -81,4 +81,5 @@ vim:sts=2:sw=2
       </plugin>
     </plugins>
   </build>
+  <description>Basic Model Interface for Java</description>
 </project>
