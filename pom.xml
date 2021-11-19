@@ -83,14 +83,8 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.1.2</version>
         <configuration>
+          <configLocation>google_checks.xml</configLocation>
           <logViolationsToConsole>true</logViolationsToConsole>
-          <checkstyleRules>
-            <module name="Checker">
-              <module name="LineLength">
-                <property name="max" value="100"/>
-              </module>
-            </module>
-          </checkstyleRules>
         </configuration>
       </plugin>
     </plugins>
