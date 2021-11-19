@@ -20,14 +20,14 @@ public interface BmiBase {
    *
    * @param fileName the path to the model configuration file
    */
-  void initialize(String fileName);
+  public void initialize(String fileName);
 
   /**
    * Performs all tasks that take place before entering the model's time loop,
    * including opening files and initializing the model state. Default model
    * inputs are provided.
    */
-  void initialize();
+  public void initialize();
 
   /**
    * Performs all tasks that take place within one pass through the model's time
@@ -36,27 +36,27 @@ public interface BmiBase {
    * can be computed by the {@link edu.colorado.csdms.bmi.BMI#initialize(String)}
    * method and this method can return with no action.
    */
-  void update();
+  public void update();
 
   /**
    * Advance model state until the given time.
    *
    * @param time a model time value
    */
-  void updateUntil(double time);
+  public void updateUntil(double time);
 
   /**
    * Advance model state by a fraction of a time step.
    *
    * @param timeFrac a fraction of a model time step value
    */
-  void updateFrac(double timeFrac);
+  public void updateFrac(double timeFrac);
 
   /**
    * Performs all tasks that take place after exiting the model's time loop.
    * This typically includes deallocating memory, closing files and printing
    * reports.
    */
-  void finalize();
+  public void finalize();
 
 }
