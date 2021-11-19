@@ -28,7 +28,7 @@ public interface BmiGridUniformRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the dimensions of the grid
    */
-  int[] getGridShape(int gridId);
+  public int[] getGridShape(int gridId);
 
   /**
    * Get the distance between the nodes of the computational grid.
@@ -36,7 +36,7 @@ public interface BmiGridUniformRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the grid spacing
    */
-  double[] getGridSpacing(int gridId);
+  public double[] getGridSpacing(int gridId);
 
   /**
    * Get the coordinates for the origin of the computational grid.
@@ -44,6 +44,6 @@ public interface BmiGridUniformRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the coordinates of the lower left corner of the grid
    */
-  double[] getGridOrigin(int gridId);
+  public double[] getGridOrigin(int gridId);
 
 }

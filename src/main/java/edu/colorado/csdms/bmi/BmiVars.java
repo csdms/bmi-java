@@ -22,7 +22,7 @@ public interface BmiVars {
    * @return the variable type; e.g., <code>int</code>, <code>double</code>,
    *         <code>String</code>.
    */
-  String getVarType(String varName);
+  public String getVarType(String varName);
 
   /**
    * Get units of the given variable. Standard unit names, in lower case, should
@@ -36,7 +36,7 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the variable units
    */
-  String getVarUnits(String varName);
+  public String getVarUnits(String varName);
 
   /**
    * Gets the memory use for each array element in bytes.
@@ -44,7 +44,7 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return item size in bytes
    */
-  int getVarItemsize(String varName);
+  public int getVarItemsize(String varName);
 
   /**
    * Gets the total size, in bytes, of the given variable.
@@ -52,7 +52,7 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the size of the variable, counted in bytes.
    */
-  int getVarNbytes(String varName);
+  public int getVarNbytes(String varName);
 
   /**
    * Gets the <em>grid identifier</em> for the given variable.
@@ -63,6 +63,6 @@ public interface BmiVars {
    * @param varName an input or output variable name, a CSDMS Standard Name
    * @return the grid id
    */
-  int getVarGrid(String varName);
+  public int getVarGrid(String varName);
 
 }

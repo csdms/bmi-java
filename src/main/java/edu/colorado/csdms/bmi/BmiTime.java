@@ -17,21 +17,21 @@ public interface BmiTime {
    *
    * @return the model start time
    */
-  double getStartTime();
+  public double getStartTime();
 
   /**
    * The current time in the model.
    *
    * @return the current model time
    */
-  double getCurrentTime();
+  public double getCurrentTime();
 
   /**
    * The end time of the model.
    *
    * @return the maximum model time
    */
-  double getEndTime();
+  public double getEndTime();
 
   /**
    * The time step of the model. The model time step should be of type
@@ -39,7 +39,7 @@ public interface BmiTime {
    *
    * @return the time step used in the model
    */
-  double getTimeStep();
+  public double getTimeStep();
 
   /**
    * The time unit of the model. CSDMS uses the UDUNITS standard from Unidata.
@@ -47,6 +47,6 @@ public interface BmiTime {
    * @see BmiVars#getVarUnits(String)
    * @return The model time unit; e.g., <em>days</em> or <em>s</em>
    */
-  String getTimeUnits();
+  public String getTimeUnits();
 
 }

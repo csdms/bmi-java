@@ -23,7 +23,7 @@ public interface BmiGridRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the dimensions of the grid
    */
-  int[] getGridShape(int gridId);
+  public int[] getGridShape(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the streamwise direction.
@@ -31,7 +31,7 @@ public interface BmiGridRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  double[] getGridX(int gridId);
+  public double[] getGridX(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the transverse direction.
@@ -39,7 +39,7 @@ public interface BmiGridRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  double[] getGridY(int gridId);
+  public double[] getGridY(int gridId);
 
   /**
    * Get the coordinates of the grid nodes in the normal direction.
@@ -47,6 +47,6 @@ public interface BmiGridRectilinear extends BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the locations of the grid nodes
    */
-  double[] getGridZ(int gridId);
+  public double[] getGridZ(int gridId);
 
 }

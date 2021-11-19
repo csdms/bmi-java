@@ -17,7 +17,7 @@ public interface BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the rank of the grid
    */
-  int getGridRank(int gridId);
+  public int getGridRank(int gridId);
 
   /**
    * Get the total number of elements in the computational grid.
@@ -25,7 +25,7 @@ public interface BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the size of the grid
    */
-  int getGridSize(int gridId);
+  public int getGridSize(int gridId);
 
   /**
    * Get the grid type as a String.
@@ -33,6 +33,6 @@ public interface BmiGrid {
    * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
    * @return the type of grid
    */
-  String getGridType(int gridId);
+  public String getGridType(int gridId);
 
 }
