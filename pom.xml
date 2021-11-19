@@ -78,6 +78,21 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <logViolationsToConsole>true</logViolationsToConsole>
+          <checkstyleRules>
+            <module name="Checker">
+              <module name="LineLength">
+                <property name="max" value="100"/>
+              </module>
+            </module>
+          </checkstyleRules>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <modelVersion>4.0.0</modelVersion>
