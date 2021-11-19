@@ -86,6 +86,13 @@
           <configLocation>google_checks.xml</configLocation>
           <logViolationsToConsole>true</logViolationsToConsole>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>9.1</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
