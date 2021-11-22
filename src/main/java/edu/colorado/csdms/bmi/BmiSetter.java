@@ -71,4 +71,5 @@ public interface BmiSetter {
    * @param src the new value for the specified variable
    */
   public void setValueAtIndices(String varName, int[] indices, String[] src);
+
 }

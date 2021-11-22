@@ -29,7 +29,7 @@ public interface BmiGridUniformRectilinear extends BmiGrid {
    * @return the dimensions of the grid
    */
   public int[] getGridShape(int gridId);
-  
+
   /**
    * Get the distance between the nodes of the computational grid.
    *
@@ -45,5 +45,5 @@ public interface BmiGridUniformRectilinear extends BmiGrid {
    * @return the coordinates of the lower left corner of the grid
    */
   public double[] getGridOrigin(int gridId);
-  
+
 }

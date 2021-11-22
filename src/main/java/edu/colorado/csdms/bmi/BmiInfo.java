@@ -17,7 +17,7 @@ public interface BmiInfo {
    * @return the name of the component
    */
   public String getComponentName();
-  
+
   /**
    * Lists a model's input variables. The variable names must be CSDMS Standard
    * Names, also known as <em>long variable names</em>.
@@ -30,7 +30,7 @@ public interface BmiInfo {
    * @return the input variables for the model
    */
   public String[] getInputVarNames();
-  
+
   /**
    * The number of input variables used by the model.
    *
@@ -38,7 +38,7 @@ public interface BmiInfo {
    * @return the number of input variables
    */
   public int getInputVarNameCount();
-  
+
   /**
    * Lists a model's output variables. The variable names must be CSDMS Standard
    * Names, also known as <em>long variable names</em>.
@@ -47,7 +47,7 @@ public interface BmiInfo {
    * @return the output variable names for the model
    */
   public String[] getOutputVarNames();
-  
+
   /**
    * The number of output variables provided by the model.
    *

@@ -48,5 +48,5 @@ public interface BmiGridRectilinear extends BmiGrid {
    * @return the locations of the grid nodes
    */
   public double[] getGridZ(int gridId);
-  
+
 }

@@ -34,7 +34,7 @@ public interface BmiGetter {
    * @param <T> a T object.
    */
   public <T> T getValueRef(String varName);
-  
+
   /**
    * Gets values at particular locations in a model variable.
    *
@@ -44,5 +44,5 @@ public interface BmiGetter {
    * @param <T> a T object.
    */
   public <T> T getValueAtIndices(String varName, int[] indices);
-  
+
 }

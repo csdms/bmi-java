@@ -10,7 +10,7 @@ package edu.colorado.csdms.bmi;
  * @version $Id: $Id
  */
 public interface BmiTime {
-  
+
   /**
    * The start time of the model. Model times should be of type <b>double</b>.
    * The default model start time is 0.0.
@@ -18,21 +18,21 @@ public interface BmiTime {
    * @return the model start time
    */
   public double getStartTime();
-  
+
   /**
    * The current time in the model.
    *
    * @return the current model time
    */
   public double getCurrentTime();
-  
+
   /**
    * The end time of the model.
    *
    * @return the maximum model time
    */
   public double getEndTime();
-  
+
   /**
    * The time step of the model. The model time step should be of type
    * <b>double</b>. The default time step is 1.0.
@@ -40,7 +40,7 @@ public interface BmiTime {
    * @return the time step used in the model
    */
   public double getTimeStep();
-  
+
   /**
    * The time unit of the model. CSDMS uses the UDUNITS standard from Unidata.
    *

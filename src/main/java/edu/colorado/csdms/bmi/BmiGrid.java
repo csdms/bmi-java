@@ -18,7 +18,7 @@ public interface BmiGrid {
    * @return the rank of the grid
    */
   public int getGridRank(int gridId);
-  
+
   /**
    * Get the total number of elements in the computational grid.
    *
@@ -26,7 +26,7 @@ public interface BmiGrid {
    * @return the size of the grid
    */
   public int getGridSize(int gridId);
-  
+
   /**
    * Get the grid type as a String.
    *
@@ -34,5 +34,5 @@ public interface BmiGrid {
    * @return the type of grid
    */
   public String getGridType(int gridId);
-  
+
 }

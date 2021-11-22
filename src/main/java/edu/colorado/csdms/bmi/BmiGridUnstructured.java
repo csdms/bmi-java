@@ -42,7 +42,7 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @return the graph of connections between the grid nodes
    */
   public int[] getGridConnectivity(int gridId);
-  
+
   /**
    * Get offsets for the grid nodes.
    *
@@ -50,5 +50,5 @@ public interface BmiGridUnstructured extends BmiGrid {
    * @return the offsets for the grid nodes
    */
   public int[] getGridOffset(int gridId);
-  
+
 }
