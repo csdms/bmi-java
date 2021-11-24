@@ -4,16 +4,13 @@
 package edu.colorado.csdms.bmi;
 
 /**
- * The complete Basic Model Interface (BMI). Defines an interface for converting
- * a standalone model into an integrated modeling framework component.
+ * The Basic Model Interface (BMI) is a standard for querying, modifying,
+ * running and coupling models.
  * <p>
- * See the <a href="http://csdms.colorado.edu">CSDMS</a> web page for more
+ * See the <a href="https://bmi.readthedocs.io">documentation</a> for more
  * information about BMI.
- *
- * @author mpiper
- * @version $Id: $Id
  */
-public interface BMI extends BmiBase, BmiInfo, BmiTime, BmiVars, BmiGetter,
-    BmiSetter, BmiGridRectilinear, BmiGridUniformRectilinear,
+public interface BMI extends BmiControl, BmiInfo, BmiTime, BmiVars, BmiGetter,
+    BmiSetter, BmiGrid, BmiGridRectilinear, BmiGridUniformRectilinear,
     BmiGridStructuredQuad, BmiGridUnstructured {
 }
