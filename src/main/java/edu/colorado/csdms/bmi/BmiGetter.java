@@ -8,7 +8,13 @@ package edu.colorado.csdms.bmi;
  */ 
 public interface BmiGetter {
 
-  public <T> T getValue(String varName);
+  public void getValue(String varName, double[] dest);
+  public void getValue(String varName, int[] dest);
+  public void getValue(String varName, String[] dest);
+
   public <T> T getValueRef(String varName);
-  public <T> T getValueAtIndices(String varName, int[] indices);
+
+  public void getValueAtIndices(String varName, double[] dest, int[] indices);
+  public void getValueAtIndices(String varName, int[] dest, int[] indices);
+  public void getValueAtIndices(String varName, String[] dest, int[] indices);
 }

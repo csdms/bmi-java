@@ -8,6 +8,11 @@ package edu.colorado.csdms.bmi;
  */
 public interface BmiSetter {
 
-  public <T> void setValue(String varName, T[] src);
-  public <T> void setValueAtIndices(String varName, int[] indices, T[] src);
+  public void setValue(String varName, double[] src);
+  public void setValue(String varName, int[] src);
+  public void setValue(String varName, String[] src);
+
+  public void setValueAtIndices(String varName, int[] indices, double[] src);
+  public void setValueAtIndices(String varName, int[] indices, int[] src);
+  public void setValueAtIndices(String varName, int[] indices, String[] src);
 }
