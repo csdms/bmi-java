@@ -12,7 +12,7 @@ public interface BmiGetter {
   public void getValue(String varName, int[] dest);
   public void getValue(String varName, String[] dest);
 
-  public <T> T getValueRef(String varName);
+  public <T> T getValuePtr(String varName);
 
   public void getValueAtIndices(String varName, double[] dest, int[] indices);
   public void getValueAtIndices(String varName, int[] dest, int[] indices);
