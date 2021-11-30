@@ -10,7 +10,7 @@ package edu.colorado.csdms.bmi;
  * See the <a href="https://bmi.readthedocs.io">documentation</a> for more
  * information about BMI.
  */
-public interface BMI extends BmiControl, BmiInfo, BmiTime, BmiVars, BmiGetter,
-    BmiSetter, BmiGrid, BmiGridRectilinear, BmiGridUniformRectilinear,
+public interface BMI extends BmiControl, BmiInfo, BmiVars, BmiTime, BmiGetter,
+    BmiSetter, BmiGrid, BmiGridUniformRectilinear, BmiGridRectilinear,
     BmiGridStructuredQuad, BmiGridUnstructured {
 }
