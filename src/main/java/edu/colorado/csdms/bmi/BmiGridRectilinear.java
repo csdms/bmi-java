@@ -8,8 +8,8 @@ package edu.colorado.csdms.bmi;
  */
 public interface BmiGridRectilinear extends BmiGrid {
 
-  public int[] getGridShape(int gridId);
-  public double[] getGridX(int gridId);
-  public double[] getGridY(int gridId);
-  public double[] getGridZ(int gridId);
+  public void getGridShape(int gridId, int[] gridShape);
+  public void getGridX(int gridId, double[] gridX);
+  public void getGridY(int gridId, double[] gridY);
+  public void getGridZ(int gridId, double[] gridZ);
 }
