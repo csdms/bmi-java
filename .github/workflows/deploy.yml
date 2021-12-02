@@ -1,0 +1,22 @@
+name: Deploy CI
+
+on: [push, pull_request]
+
+jobs:
+  install:
+    name: Deploy jar to Packages
+    if:
+      github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Deploy with Maven
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        run: mvn deploy
