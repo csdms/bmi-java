@@ -1,52 +1,15 @@
-/**
- * Interface that describes rectilinear grids.
- */
 package edu.colorado.csdms.bmi;
 
 /**
- * Methods that describe a rectilinear grid.
+ * Describe a grid of type <em>rectilinear</em>.
  * <p>
- * In a 2D rectilinear grid, every grid cell (or element) is a rectangle but
- * different cells can have different dimensions. All cells in the same row have
- * the same grid spacing in the y direction and all cells in the same column
- * have the same grid spacing in the x direction. Grid spacings can be computed
- * as the difference of successive x or y values.
- *
- * @author mpiper
- * @version $Id: $Id
+ * See the BMI <a href="https://bmi.readthedocs.io">documentation</a> for
+ * detailed information about each function.
  */
 public interface BmiGridRectilinear extends BmiGrid {
 
-  /**
-   * Get the dimensions of the computational grid.
-   *
-   * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
-   * @return the dimensions of the grid
-   */
-  public int[] getGridShape(int gridId);
-
-  /**
-   * Get the coordinates of the grid nodes in the streamwise direction.
-   *
-   * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
-   * @return the locations of the grid nodes
-   */
-  public double[] getGridX(int gridId);
-
-  /**
-   * Get the coordinates of the grid nodes in the transverse direction.
-   *
-   * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
-   * @return the locations of the grid nodes
-   */
-  public double[] getGridY(int gridId);
-
-  /**
-   * Get the coordinates of the grid nodes in the normal direction.
-   *
-   * @param gridId a grid identifier from {@link edu.colorado.csdms.bmi.BmiVars#getVarGrid(String)}
-   * @return the locations of the grid nodes
-   */
-  public double[] getGridZ(int gridId);
-
+  public void getGridShape(int gridId, int[] gridShape);
+  public void getGridX(int gridId, double[] gridX);
+  public void getGridY(int gridId, double[] gridY);
+  public void getGridZ(int gridId, double[] gridZ);
 }
