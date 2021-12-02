@@ -1,13 +1,13 @@
-name: Maven CI
+name: Build CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build:
+    name: Check source and build jar
+    if:
+      github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,9 +16,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Check style
+        run: mvn --batch-mode --update-snapshots checkstyle:check
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
-      - name: Run Javadoc with Maven
-        run: mvn --batch-mode --update-snapshots javadoc:javadoc
-      - name: Check style with Maven
-        run: mvn --batch-mode --update-snapshots checkstyle:check
