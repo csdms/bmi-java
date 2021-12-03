@@ -1,4 +1,4 @@
-[![Maven CI](https://github.com/csdms/bmi-java/actions/workflows/maven.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/maven.yml)
+[![Build CI](https://github.com/csdms/bmi-java/actions/workflows/build.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/build.yml)
 
 # bmi-java
 
