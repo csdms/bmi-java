@@ -95,13 +95,20 @@
         </dependencies>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+         <artifactId>wagon-ssh-external</artifactId>
+         <version>3.0.0</version>
+      </extension>
+    </extensions>
   </build>
 
   <distributionManagement>
     <repository>
-      <id>github</id>
-      <name>GitHub CSDMS Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/csdms/bmi-java</url>
+      <id>csdms</id>
+      <name>CSDMS Apache Maven Packages</name>
+      <url>scpexe://arroyo.colorado.edu/data/web/html/csdms.colorado.edu/repository</url>
     </repository>
  </distributionManagement>
 </project>
