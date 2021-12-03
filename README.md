@@ -1,4 +1,4 @@
-[![Maven CI](https://github.com/csdms/bmi-java/actions/workflows/maven.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/maven.yml)
+[![Build CI](https://github.com/csdms/bmi-java/actions/workflows/build.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/build.yml)
 
 # bmi-java
 
@@ -49,9 +49,43 @@ target
                 `-- inputFiles.lst
 ```
 
-To install the jar file to your local Maven repository for use with other packages, run
+To install the jar file to your local Maven repository
+(typically `~/.m2/repository`)
+for use with other packages, run
 
     $ mvn install
+
+The result in the local repository will look like
+```bash
+edu
+`-- colorado
+    `-- csdms
+        `-- bmi
+            |-- 2.0
+            |   |-- _remote.repositories
+            |   |-- bmi-2.0.jar
+            |   |-- bmi-2.0.jar.md5
+            |   |-- bmi-2.0.jar.sha1
+            |   |-- bmi-2.0.pom
+            |   |-- bmi-2.0.pom.md5
+            |   `-- bmi-2.0.pom.sha1
+            |-- maven-metadata-local.xml
+            |-- maven-metadata-local.xml.md5
+            `-- maven-metadata-local.xml.sha1
+
+4 directories, 10 files
+```
+
+### Developer note: Deploy
+
+The `bmi` package is hosted on the [CSDMS Apache Maven Repository](https://csdms.colorado.edu/repository).
+To deploy the `bmi` package to this site, run
+```
+$ mvn deploy
+```
+on a machine where you have provided [server settings and encrypted login credentials](http://maven.apache.org/guides/mini/guide-encryption.html#how-to-encrypt-server-passwords)
+for the site in your local `settings.xml` file.
+
 
 ## Use
 
