@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/45644058.svg)](https://zenodo.org/badge/latestdoi/45644058)
 [![Build CI](https://github.com/csdms/bmi-java/actions/workflows/build.yml/badge.svg)](https://github.com/csdms/bmi-java/actions/workflows/build.yml)
 
 # bmi-java
